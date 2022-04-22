@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<tml lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <!-- css link  -->
+
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- bootstrap link -->
+
+    <!-- JavaScript bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <!-- JavaScript bootstrap Bundle with Popper -->
+
+    <!--------- font Awesome link  ------------>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!--------- font Awesome link  ------------>
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+      rel="stylesheet">
+    <!-- google fonts link -->
+
+  <!-- icon cdn link -->
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <!-- chart link -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- chart link -->
+
+    <!-- link for candlestick chart  -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <!-- link for candlestick chart  -->
+
+    <!-- chart js link -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- chart js link -->
+
+    <!-- candlestrick chart -->
+    <!-- candlestick chart code in under body -->
+    <!-- candlestrick chart -->
+
+
+
+    <!-- watermark area chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {
+        packages: ["corechart"]
+      });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Year", ""],
+          ["jan", 6],
+          ["jan", 5],
+          ["jan", 4],
+          ["jan", 4.5],
+          ["jan", 2],
+          ["jan", 3],
+          ["jan", 6],
+          ["jan", 4],
+          ["jan", 5],
+          ["jan2", 3],
+          ["jan4", 3.5],
+          ["jan6", 1],
+          ["jan4", 2],
+          ["jan", 4],
+          ["jan", 3],
+          ["jan", 3.5],
+          ["jan", 1],
+          ["jan", 2],
+          ["jan", 4],
+          ["jan", 1],
+          ["jan", 2],
+          ["jan", 4],
+          ["jan", 3],
+          ["jan", 4],
+        ]);
+
+
+
+        var options = {
+          pointSize: 6,
+          title: "Number Of Mentions",
+          width: "1000",
+          // hAxis: {title: 'Year',  titleTextStyle: {color: '#000'}},
+          vAxis: {
+            minValue: 0
+          },
+          colors: ["#855CF8"],
+          chartArea: {
+            width: "90%",
+            height: "90%",
+            left: 20,
+            top: 16
+          },
+          vAxis: {
+            gridlines: {
+              color: 'transparent'
+            }
+          }
+        };
+
+        var chart = new google.visualization.AreaChart(
+          document.getElementById("area_chart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    <!-- watermark area chart -->
+
+
+
+    <!-- line chart for table -->
+    <!-- <script type="text/javascript">
+      google.charts.load('current', {
+        packages: ['corechart', 'line']
+      });
+      google.charts.setOnLoadCallback(drawBasic);
+
+      function drawBasic() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', '');
+
+        data.addRows([
+          [0, 0],
+          [1, 10],
+          [2, 23],
+          [3, 17],
+          [4, 18],
+          [5, 9],
+          [6, 11],
+          [7, 27],
+          [8, 33],
+          [9, 40],
+          [10, 32],
+          [11, 35],
+          [12, 30],
+          [13, 40],
+          [14, 42],
+          [15, 47],
+          [16, 44],
+          [17, 48],
+          [18, 52],
+          [19, 54],
+          [20, 42],
+          [21, 55],
+          [22, 56],
+          [23, 57],
+          [10, 32],
+          [11, 35],
+          [12, 30],
+          [13, 40],
+          [14, 42],
+          [15, 47],
+          [16, 44],
+          [17, 48],
+          [18, 52],
+          [19, 54],
+          [20, 42],
+          [21, 55],
+          [22, 56],
+          [23, 57],
+
+        ]);
+
+
+        var options = {
+          backgroundColor: 'none',
+          dataOpacity: 0,
+          colors: ['#16C784'],
+          width: "1000",
+          height: "480",
+          hAxis: {
+            // title: 'Time',
+            baselineColor: 'none',
+            textColor: 'none',
+           
+          },
+
+          vAxis: {
+            // title: 'Popularity',
+            // minValue: 0,
+            baselineColor: 'none',
+            gridlineColor: 'none',
+            textPosition: 'none',
+
+            gridlines: {
+              color: 'transparent'
+            }
+          },
+
+          chartArea: {
+            width: "100",
+            height: "20",
+            left: 0,
+            top: 15,
+          },
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
+
+        chart.draw(data, options);
+      }
+    </script> -->
+    <!-- line chart for table -->
+
+    <!-- <script type="text/javascript">
+      google.charts.load('current', {
+        packages: ['corechart', 'line']
+      });
+      google.charts.setOnLoadCallback(drawLineColors);
+
+      function drawLineColors() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', );
+        data.addColumn('number', );
+
+        data.addRows([
+          [0, 25],
+          [1, 34],
+          [2, 23],
+          [3, 17],
+          [4, 18],
+          [5, 9],
+          [6, 11],
+          [7, 27],
+          [8, 33],
+          [9, 40],
+          [10, 33],
+          [11, 40],
+
+        ]);
+
+
+        var options = {
+
+          height: 450,
+          hAxis: {
+            title: 'Time (Universal)',
+            baselineColor: 'none',
+            gridlines: {
+              color: 'transparent'
+            }
+          },
+          vAxis: {
+            title: '# of mentions (hundreds)'
+          },
+          colors: ['#E80054']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
+        chart.draw(data, options);
+      }
+    </script> -->
+
+
+  </head>
+
+  <html>
+
+  <body>
+    <!-- searchbar & header -->
+    <div class="header_wrapper">
+      <div class="search_bar">
+        <div class="inner_search">
+          <input type="search" class="form-control" placeholder="Search here" />
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
+
+      <div class="user_login">
+        <div class="notification">
+          <i class="far fa-bell bell_icon">
+            <div class="notification_item">
+              <h5>Notifications (12)</h5>
+              <p><b>Markksantos’s</b> Order was
+                automatically marked as <b>Complete</b> </p>
+              <span>2h ago</span>
+
+              <p><b>Markksantos’s</b> Order was
+                automatically marked as <b>Complete</b> </p>
+              <span>2h ago</span>
+
+              <p><b>Markksantos’s</b> Order was
+                automatically marked as <b>Complete</b> </p>
+              <span>2h ago</span>
+
+              <p><b>Markksantos’s</b> Order was
+                automatically marked as <b>Complete</b> </p>
+              <span>2h ago</span>
+            </div>
+          </i>
+        </div>
+        <div class="user_logo">
+          <div class="user_logo_box">MA
+            <div class="user_logo_box_items">
+              <li>Cameron Williamson</li>
+              <li class="cammeron_toogle">Apperance
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+
+              </li>
+              <li>Referral</li>
+              <li>Billings</li>
+              <li>Settings</li>
+
+              <li>Sign out <i class="fa fa-sign-out sign_out_icon"></i> </li>
+
+            </div>
+            </div->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- searchbar & header -->
+
+
+  <!------------Sidebar Start-------------->
+  <div class="sidebar">
+    <input type="checkbox" id="check" />
+
+    <label for="check">
+      <i class="fas fa-bars" id="bars"></i>
+      <i class="fas fa-times" id="close"></i>
+    </label>
+
+    <div class="sidebar">
+      <div class="sidebar_logo">
+        <img src="imgage/darks_sidebar.png" alt="" />
+      </div>
+
+      <ul class="sidebar_ul sidebar_ul_dark" id="myDIV">
+        <li class="nav_links">
+          <a href="#" > <span class="iconify" data-icon="gg:browse"></span> Summary</a>
+        </li>
+
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="fluent:arrow-trending-lines-24-filled"></span> Trending</a>
+        </li>
+        <li  class="nav_links active">
+          <a href="#"><span class="iconify" data-icon="fluent:document-text-clock-20-regular"
+              data-flip="vertical"></span> Historical Data</a>
+        </li>
+        <li  class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="uil:calendar-alt"></span> Watchlist</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"><span class="iconify" data-icon="gis:search-propertie"></span> Screener</a>
+        </li>
+        <li style="margin-bottom:40px;" class="nav_links">
+          <a href="#"><span class="iconify" data-icon="icon-park-outline:bell-ring"
+              data-flip="horizontal,vertical"></span> API(Coming Soon)</a>
+        </li>
+        <p style="color: rgba(17, 33, 29, 0.5);margin-left: 30px;font-family: 'Inter';">In Depth:</p>
+        <li class="nav_links">
+          <a href="#"><span class="iconify" data-icon="uil:twitter-alt"></span> Twitter</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="ps:reddit"></span> Reddit</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="akar-icons:instagram-fill"></span> Instagram</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> 
+            <svg class="blackIcon" width="12" height="20" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.0544286 23.4682C0.0544286 22.29 0.0544286 21.1642 0.0544286 20.0297C0.0544286 19.794 0.249312 19.7591 0.399904 19.6893C2.2513 18.7904 4.10269 17.9002 5.95408 17.0013C6.06038 16.9489 6.15782 16.8966 6.31727 16.8006C5.56432 16.4428 4.86451 16.1198 4.1647 15.7882C2.89796 15.1948 1.64007 14.5926 0.373329 14.0078C0.125295 13.8944 0.018995 13.7722 0.0278533 13.4929C0.04557 12.402 0.0367115 11.3198 0.0367115 10.1504C0.639079 10.4471 1.1883 10.7177 1.73751 10.9969C4.74049 12.5155 7.74347 14.0428 10.7464 15.5526C11.0122 15.6922 11.1362 15.8493 11.1185 16.1548C11.0919 16.6871 11.2779 17.3155 11.0565 17.7431C10.835 18.1708 10.1529 18.2929 9.67458 18.5373C6.56531 20.1431 3.46489 21.7489 0.355612 23.346C0.275887 23.3897 0.187304 23.4158 0.0544286 23.4682Z" fill="#11211D"/>
+              <path d="M11.0724 0.611328C11.0724 1.78078 11.0635 2.89787 11.0812 4.02369C11.0812 4.28551 10.9129 4.32915 10.7446 4.40769C8.77808 5.32406 6.81153 6.24042 4.85383 7.15678C4.80954 7.18296 4.76525 7.20915 4.65895 7.27024C5.73081 7.76769 6.74066 8.23897 7.75937 8.71024C8.79579 9.19024 9.83222 9.67897 10.8686 10.1502C11.0192 10.2201 11.099 10.2899 11.099 10.4644C11.0901 11.599 11.099 12.7248 11.099 13.9117C10.5055 13.6237 9.93852 13.3444 9.37159 13.0564C6.4129 11.5641 3.46307 10.0542 0.504381 8.5706C0.158905 8.39606 -0.0182613 8.20406 0.0437471 7.81133C0.0791805 7.55824 0.0880389 7.28769 0.0437471 7.02587C-0.0536947 6.44115 0.203197 6.14442 0.734698 5.87387C4.11859 4.16333 7.48476 2.41787 10.8598 0.681146C10.8952 0.663692 10.9572 0.654964 11.0724 0.611328Z" fill="#11211D"/>
+              </svg>
+              <svg class="whiteIcon" width="12" height="20" viewBox="0 0 12 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.387839 10.0212C0.38764 9.91909 0.387439 9.81653 0.387263 9.71344C0.798011 9.91628 1.18852 10.1104 1.57887 10.3089L1.57957 10.3093C2.58 10.8152 3.58069 11.3222 4.58152 11.8292C6.58285 12.8432 8.58475 13.8575 10.5862 14.8638C10.6935 14.9205 10.7307 14.9599 10.7458 14.9829C10.7562 14.999 10.7749 15.0347 10.7691 15.1345L10.7689 15.1373C10.7586 15.3443 10.7779 15.5797 10.7945 15.7832C10.8011 15.8645 10.8074 15.9406 10.8111 16.0078C10.8263 16.2797 10.8094 16.4592 10.7457 16.5822C10.6943 16.6814 10.5694 16.7783 10.3198 16.889C10.2218 16.9326 10.1193 16.9723 10.008 17.0154C9.98377 17.0248 9.95914 17.0344 9.93404 17.0442C9.79898 17.0968 9.65211 17.1558 9.51536 17.2256L9.51398 17.2263C8.71775 17.6375 7.92219 18.0487 7.12696 18.4597C4.88584 19.618 2.64739 20.7749 0.404429 21.9275V21.9264V21.9195V21.9127V21.9059V21.8991V21.8923V21.8855V21.8787V21.8719V21.865V21.8582V21.8514V21.8446V21.8378V21.831V21.8242V21.8174V21.8106V21.8038V21.797V21.7902V21.7834V21.7766V21.7698V21.763V21.7562V21.7494V21.7426V21.7358V21.7291V21.7223V21.7155V21.7087V21.7019V21.6951V21.6883V21.6816V21.6748V21.668V21.6612V21.6544V21.6476V21.6409V21.6341V21.6273V21.6205V21.6138V21.607V21.6002V21.5934V21.5867V21.5799V21.5731V21.5664V21.5596V21.5528V21.5461V21.5393V21.5325V21.5258V21.519V21.5122V21.5055V21.4987V21.4919V21.4852V21.4784V21.4717V21.4649V21.4582V21.4514V21.4446V21.4379V21.4311V21.4244V21.4176V21.4109V21.4041V21.3974V21.3906V21.3839V21.3771V21.3704V21.3637V21.3569V21.3502V21.3434V21.3367V21.3299V21.3232V21.3165V21.3097V21.303V21.2962V21.2895V21.2828V21.276V21.2693V21.2626V21.2558V21.2491V21.2424V21.2356V21.2289V21.2222V21.2154V21.2087V21.202V21.1953V21.1885V21.1818V21.1751V21.1684V21.1616V21.1549V21.1482V21.1415V21.1347V21.128V21.1213V21.1146V21.1079V21.1011V21.0944V21.0877V21.081V21.0743V21.0676V21.0608V21.0541V21.0474V21.0407V21.034V21.0273V21.0206V21.0139V21.0072V21.0004V20.9937V20.987V20.9803V20.9736V20.9669V20.9602V20.9535V20.9468V20.9401V20.9334V20.9267V20.92V20.9133V20.9066V20.8999V20.8932V20.8865V20.8798V20.8731V20.8664V20.8597V20.853V20.8463V20.8396V20.8329V20.8262V20.8195V20.8128V20.8062V20.7995V20.7928V20.7861V20.7794V20.7727V20.766V20.7593V20.7526V20.7459V20.7393V20.7326V20.7259V20.7192V20.7125V20.7058V20.6992V20.6925V20.6858V20.6791V20.6724V20.6657V20.6591V20.6524V20.6457V20.639V20.6323V20.6257V20.619V20.6123V20.6056V20.5989V20.5923V20.5856V20.5789V20.5722V20.5656V20.5589V20.5522V20.5456V20.5389V20.5322V20.5255V20.5189V20.5122V20.5055V20.4988V20.4922V20.4855V20.4788V20.4722V20.4655V20.4588V20.4522V20.4455V20.4388V20.4322V20.4255V20.4188V20.4122V20.4055V20.3988V20.3922V20.3855V20.3788V20.3722V20.3655V20.3589V20.3522V20.3455V20.3389V20.3322V20.3256V20.3189V20.3122V20.3056V20.2989V20.2923V20.2856V20.2789V20.2723V20.2656V20.259V20.2523V20.2456V20.239V20.2323V20.2257V20.219V20.2124V20.2057V20.1991V20.1924V20.1857V20.1791V20.1724V20.1658V20.1591V20.1525V20.1458V20.1392V20.1325V20.1259V20.1192V20.1126V20.1059V20.0993V20.0926V20.086V20.0793V20.0727V20.066V20.0594V20.0527V20.0461V20.0394V20.0328V20.0261V20.0195V20.0128V20.0062V19.9995V19.9929V19.9862V19.9796V19.9729V19.9663V19.9596V19.953V19.9463V19.9397V19.9331V19.9264V19.9198V19.9131V19.9065V19.8998V19.8932V19.8865V19.8799V19.8732V19.8666V19.86V19.8533V19.8467V19.84V19.8334V19.8267V19.8201V19.8135V19.8068V19.8002V19.7935V19.7869V19.7802V19.7736V19.767V19.7603V19.7537V19.747V19.7404V19.7337V19.7271V19.7205V19.7138V19.7072V19.7005V19.6939V19.6873V19.6806V19.674V19.6673V19.6607V19.654V19.6474V19.6408V19.6341V19.6275V19.6208V19.6142V19.6076V19.6009V19.5943V19.5876V19.581V19.5744V19.5677V19.5611V19.5544V19.5478V19.5412V19.5345V19.5279V19.5212V19.5146V19.508V19.5013V19.4947V19.488V19.4814V19.4748V19.4681V19.4615V19.4548V19.4482V19.4415V19.4349V19.4283V19.4216V19.415V19.4083V19.4017V19.3951V19.3884V19.3818V19.3751V19.3685V19.3619V19.3552V19.3486V19.3419V19.3353V19.3287V19.322V19.3154V19.3087V19.3021V19.2954V19.2888V19.2822V19.2755V19.2689V19.2622V19.2556V19.2489V19.2423V19.2357V19.229V19.2224V19.2157V19.2091V19.2024V19.1958V19.1892V19.1825V19.1759V19.1692V19.1626V19.1559V19.1493V19.1427V19.136V19.1294V19.1227V19.1161V19.1094V19.1028V19.0961V19.0895V19.0828V19.0762V19.0695V19.0674C0.408849 19.0654 0.413801 19.0633 0.419344 19.0609C0.431174 19.0559 0.44216 19.0514 0.455531 19.0459C0.461358 19.0436 0.467637 19.041 0.474636 19.0381C0.49543 19.0296 0.52089 19.019 0.54712 19.0068L0.547144 19.0069L0.552774 19.0042C1.47812 18.5549 2.40352 18.1077 3.32926 17.6604C4.25491 17.2132 5.1809 16.7658 6.10695 16.3162L6.10695 16.3162L6.10875 16.3153C6.22491 16.258 6.331 16.2008 6.4978 16.1004L7.05621 15.7642L6.4675 15.4845C6.06859 15.2949 5.67625 15.1112 5.2923 14.9315C4.95971 14.7758 4.63341 14.623 4.31458 14.4719L4.31318 14.4713C3.84199 14.2505 3.37072 14.0279 2.89919 13.8052C2.10718 13.4312 1.31443 13.0568 0.520016 12.6901L0.518917 12.6896C0.414163 12.6416 0.392855 12.6145 0.389759 12.6101L0.389683 12.61C0.388994 12.6091 0.386408 12.6055 0.383559 12.5936C0.380101 12.5792 0.376164 12.5517 0.377677 12.504L0.377719 12.504L0.377807 12.4986C0.391089 11.6808 0.389495 10.8667 0.387839 10.0212Z" fill="white" stroke="#FEFEFE" stroke-width="0.7"/>
+                <path d="M10.7801 12.4475C10.7803 12.5497 10.7805 12.6522 10.7807 12.7553C10.37 12.5525 9.97945 12.3583 9.5891 12.1598L9.5884 12.1595C8.58797 11.6536 7.58728 11.1466 6.58645 10.6395C4.58512 9.62554 2.58322 8.61128 0.581728 7.60497C0.474452 7.54829 0.437257 7.50887 0.422208 7.48583C0.41173 7.4698 0.393098 7.43409 0.398901 7.33426L0.399041 7.33144C0.409372 7.12449 0.390117 6.889 0.37348 6.68554C0.366837 6.6043 0.360612 6.52816 0.356853 6.46099C0.341636 6.18901 0.358584 6.00958 0.422282 5.88658C0.473668 5.78735 0.598582 5.69049 0.848124 5.5797C0.946198 5.53616 1.04869 5.49644 1.15999 5.4533C1.1842 5.44392 1.20883 5.43437 1.23392 5.42459C1.36899 5.37194 1.51586 5.31299 1.65261 5.24314L1.65399 5.24242C2.45022 4.8312 3.24578 4.42003 4.04101 4.00902C6.28213 2.85073 8.52058 1.69382 10.7635 0.541286L10.7635 0.542393L10.7635 0.54921L10.7635 0.556025L10.7635 0.56284L10.7635 0.569653L10.7635 0.576467L10.7635 0.583279L10.7635 0.59009L10.7635 0.596899L10.7635 0.603708L10.7635 0.610517L10.7635 0.617324L10.7635 0.624129L10.7635 0.630935L10.7635 0.637739L10.7635 0.644543L10.7635 0.651344L10.7635 0.658146L10.7635 0.664947L10.7635 0.671746L10.7635 0.678545L10.7635 0.685343L10.7635 0.69214L10.7635 0.698935L10.7635 0.705729L10.7635 0.712523L10.7635 0.719317L10.7635 0.726109L10.7635 0.732901L10.7635 0.739691L10.7635 0.74648L10.7635 0.753269L10.7635 0.760056L10.7635 0.766843L10.7635 0.773629L10.7635 0.780414L10.7635 0.787198L10.7635 0.793982L10.7635 0.800763L10.7635 0.807545L10.7635 0.814325L10.7635 0.821105L10.7635 0.827884L10.7635 0.834662L10.7635 0.841439L10.7635 0.848215L10.7635 0.854991L10.7635 0.861765L10.7635 0.868539L10.7635 0.875312L10.7635 0.882084L10.7635 0.888855L10.7635 0.895625L10.7635 0.902394L10.7635 0.909162L10.7635 0.915931L10.7635 0.922698L10.7635 0.929463L10.7635 0.936229L10.7635 0.942993L10.7635 0.949757L10.7635 0.95652L10.7635 0.963282L10.7635 0.970043L10.7635 0.976803L10.7635 0.983562L10.7635 0.990321L10.7635 0.99708L10.7635 1.00384L10.7635 1.01059L10.7635 1.01735L10.7635 1.0241L10.7635 1.03086L10.7635 1.03761L10.7635 1.04436L10.7635 1.05111L10.7635 1.05787L10.7635 1.06462L10.7635 1.07136L10.7635 1.07811L10.7635 1.08486L10.7635 1.09161L10.7635 1.09835L10.7635 1.1051L10.7635 1.11184L10.7635 1.11859L10.7635 1.12533L10.7635 1.13207L10.7635 1.13882L10.7635 1.14556L10.7635 1.1523L10.7635 1.15904L10.7635 1.16578L10.7635 1.17251L10.7635 1.17925L10.7635 1.18599L10.7635 1.19272L10.7635 1.19946L10.7635 1.20619L10.7635 1.21293L10.7635 1.21966L10.7635 1.22639L10.7635 1.23312L10.7635 1.23985L10.7635 1.24658L10.7635 1.25331L10.7635 1.26004L10.7635 1.26677L10.7635 1.2735L10.7635 1.28022L10.7635 1.28695L10.7635 1.29368L10.7635 1.3004L10.7635 1.30712L10.7635 1.31385L10.7635 1.32057L10.7635 1.32729L10.7635 1.33401L10.7635 1.34073L10.7635 1.34745L10.7635 1.35417L10.7635 1.36089L10.7635 1.36761L10.7635 1.37433L10.7635 1.38104L10.7635 1.38776L10.7635 1.39447L10.7635 1.40119L10.7635 1.4079L10.7635 1.41462L10.7635 1.42133L10.7635 1.42804L10.7635 1.43475L10.7635 1.44147L10.7635 1.44818L10.7635 1.45489L10.7635 1.46159L10.7635 1.4683L10.7635 1.47501L10.7635 1.48172L10.7635 1.48843L10.7635 1.49513L10.7635 1.50184L10.7635 1.50854L10.7635 1.51525L10.7635 1.52195L10.7635 1.52865L10.7635 1.53536L10.7635 1.54206L10.7635 1.54876L10.7635 1.55546L10.7635 1.56216L10.7635 1.56886L10.7635 1.57556L10.7635 1.58226L10.7635 1.58896L10.7635 1.59565L10.7635 1.60235L10.7635 1.60905L10.7635 1.61574L10.7635 1.62244L10.7635 1.62913L10.7635 1.63583L10.7635 1.64252L10.7635 1.64921L10.7635 1.65591L10.7635 1.6626L10.7635 1.66929L10.7635 1.67598L10.7635 1.68267L10.7635 1.68936L10.7635 1.69605L10.7635 1.70274L10.7635 1.70943L10.7635 1.71611L10.7635 1.7228L10.7635 1.72949L10.7635 1.73618L10.7635 1.74286L10.7635 1.74955L10.7635 1.75623L10.7635 1.76292L10.7635 1.7696L10.7635 1.77628L10.7635 1.78297L10.7635 1.78965L10.7635 1.79633L10.7635 1.80301L10.7635 1.80969L10.7635 1.81637L10.7635 1.82305L10.7635 1.82973L10.7635 1.83641L10.7635 1.84309L10.7635 1.84977L10.7635 1.85645L10.7635 1.86312L10.7635 1.8698L10.7635 1.87648L10.7635 1.88315L10.7635 1.88983L10.7635 1.8965L10.7635 1.90318L10.7635 1.90985L10.7635 1.91653L10.7635 1.9232L10.7635 1.92987L10.7635 1.93655L10.7635 1.94322L10.7635 1.94989L10.7635 1.95656L10.7635 1.96323L10.7635 1.9699L10.7635 1.97657L10.7635 1.98324L10.7635 1.98991L10.7635 1.99658L10.7635 2.00325L10.7635 2.00992L10.7635 2.01658L10.7635 2.02325L10.7635 2.02992L10.7635 2.03658L10.7635 2.04325L10.7635 2.04992L10.7635 2.05658L10.7635 2.06325L10.7635 2.06991L10.7635 2.07658L10.7635 2.08324L10.7635 2.0899L10.7635 2.09657L10.7635 2.10323L10.7635 2.10989L10.7635 2.11656L10.7635 2.12322L10.7635 2.12988L10.7635 2.13654L10.7635 2.1432L10.7635 2.14986L10.7635 2.15652L10.7635 2.16318L10.7635 2.16984L10.7635 2.1765L10.7635 2.18316L10.7635 2.18982L10.7635 2.19648L10.7635 2.20313L10.7635 2.20979L10.7635 2.21645L10.7635 2.22311L10.7635 2.22976L10.7635 2.23642L10.7635 2.24308L10.7635 2.24973L10.7635 2.25639L10.7635 2.26304L10.7635 2.2697L10.7635 2.27635L10.7635 2.28301L10.7635 2.28966L10.7635 2.29631L10.7635 2.30297L10.7635 2.30962L10.7635 2.31627L10.7635 2.32293L10.7635 2.32958L10.7635 2.33623L10.7635 2.34288L10.7635 2.34954L10.7635 2.35619L10.7635 2.36284L10.7635 2.36949L10.7635 2.37614L10.7635 2.38279L10.7635 2.38944L10.7635 2.39609L10.7635 2.40274L10.7635 2.40939L10.7635 2.41604L10.7635 2.42269L10.7635 2.42934L10.7635 2.43599L10.7635 2.44264L10.7635 2.44928L10.7635 2.45593L10.7635 2.46258L10.7635 2.46923L10.7635 2.47588L10.7635 2.48252L10.7635 2.48917L10.7635 2.49582L10.7635 2.50246L10.7635 2.50911L10.7635 2.51576L10.7635 2.5224L10.7635 2.52905L10.7635 2.5357L10.7635 2.54234L10.7635 2.54899L10.7635 2.55563L10.7635 2.56228L10.7635 2.56892L10.7635 2.57557L10.7635 2.58221L10.7635 2.58886L10.7635 2.5955L10.7635 2.60215L10.7635 2.60879L10.7635 2.61543L10.7635 2.62208L10.7635 2.62872L10.7635 2.63537L10.7635 2.64201L10.7635 2.64865L10.7635 2.6553L10.7635 2.66194L10.7635 2.66858L10.7635 2.67522L10.7635 2.68187L10.7635 2.68851L10.7635 2.69515L10.7635 2.70179L10.7635 2.70844L10.7635 2.71508L10.7635 2.72172L10.7635 2.72836L10.7635 2.73501L10.7635 2.74165L10.7635 2.74829L10.7635 2.75493L10.7635 2.76157L10.7635 2.76821L10.7635 2.77486L10.7635 2.7815L10.7635 2.78814L10.7635 2.79478L10.7635 2.80142L10.7635 2.80806L10.7635 2.8147L10.7635 2.82134L10.7635 2.82798L10.7635 2.83463L10.7635 2.84127L10.7635 2.84791L10.7635 2.85455L10.7635 2.86119L10.7635 2.86783L10.7635 2.87447L10.7635 2.88111L10.7635 2.88775L10.7635 2.89439L10.7635 2.90103L10.7635 2.90767L10.7635 2.91431L10.7635 2.92095L10.7635 2.92759L10.7635 2.93423L10.7635 2.94088L10.7635 2.94752L10.7635 2.95416L10.7635 2.9608L10.7635 2.96744L10.7635 2.97408L10.7635 2.98072L10.7635 2.98736L10.7635 2.994L10.7635 3.00064L10.7635 3.00728L10.7635 3.01392L10.7635 3.02056L10.7635 3.0272L10.7635 3.03384L10.7635 3.04048L10.7635 3.04712L10.7635 3.05376L10.7635 3.0604L10.7635 3.06705L10.7635 3.07369L10.7635 3.08033L10.7635 3.08697L10.7635 3.09361L10.7635 3.10025L10.7635 3.10689L10.7635 3.11353L10.7635 3.12017L10.7635 3.12681L10.7635 3.13346L10.7635 3.1401L10.7635 3.14674L10.7635 3.15338L10.7635 3.16002L10.7635 3.16666L10.7635 3.17331L10.7635 3.17995L10.7635 3.18659L10.7635 3.19323L10.7635 3.19987L10.7635 3.20652L10.7635 3.21316L10.7635 3.2198L10.7635 3.22644L10.7635 3.23309L10.7635 3.23973L10.7635 3.24637L10.7635 3.25302L10.7635 3.25966L10.7635 3.2663L10.7635 3.27295L10.7635 3.27959L10.7635 3.28623L10.7635 3.29288L10.7635 3.29952L10.7635 3.30617L10.7635 3.31281L10.7635 3.31946L10.7635 3.3261L10.7635 3.33274L10.7635 3.33939L10.7635 3.34603L10.7635 3.35268L10.7635 3.35933L10.7635 3.36597L10.7635 3.37262L10.7635 3.37926L10.7635 3.38591L10.7635 3.39256L10.7635 3.3992L10.7635 3.40136C10.7591 3.40333 10.7542 3.4055 10.7486 3.40785C10.7368 3.41288 10.7258 3.41736 10.7124 3.42281C10.7066 3.42519 10.7003 3.42775 10.6933 3.43062C10.6725 3.43915 10.6471 3.44975 10.6208 3.46191L10.6208 3.46186L10.6152 3.4646C9.68985 3.91388 8.76445 4.36101 7.83871 4.80831C6.91306 5.25555 5.98707 5.70297 5.06102 6.1526L5.06102 6.15259L5.05922 6.15348C4.94306 6.2107 4.83697 6.2679 4.67017 6.36833L4.11175 6.70453L4.70047 6.9843C5.09938 7.17386 5.49172 7.35753 5.87567 7.53728C6.20826 7.69298 6.53456 7.84573 6.85339 7.99683L6.85479 7.99748C7.32598 8.21823 7.79725 8.44081 8.26878 8.66351C9.06079 9.03757 9.85354 9.41198 10.648 9.77868L10.6491 9.77919C10.7538 9.8271 10.7751 9.85427 10.7782 9.85863L10.7783 9.85874C10.779 9.85969 10.7816 9.86327 10.7844 9.87515C10.7879 9.88956 10.7918 9.917 10.7903 9.96472L10.7902 9.96472L10.7902 9.97013C10.7769 10.788 10.7785 11.602 10.7801 12.4475Z" fill="white" stroke="#FEFEFE" stroke-width="0.7"/>
+              </svg>
+            Stocktwits</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="icon-park-outline:facebook"></span> Facebook</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"><span class="iconify" data-icon="iconoir:youtube"></span> Youtube</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"><span class="iconify" data-icon="ic:baseline-discord"></span> Discord</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="uit:telegram-alt"></span> Telegram</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="simple-icons:4chan"></span> 4Chan</a>
+        </li>
+        <li class="nav_links">
+          <a href="#"> <span class="iconify" data-icon="uil:newspaper"></span> News</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!------------Sidebar End-------------->
+
+
+
+
+
+    <div class="main_body">
+
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="flexable_item for_first_check">
+              <div class="bitcoin">
+                <img src="imgage/bitcoin.svg" alt="" />
+              </div>
+              <div class="bitcoin_info">
+                <div class="py-2">
+                  <h5>Bitcoin</h5>
+                  <span class="btc">BTC</span>
+                  <i class="fa fa-star d-inline m-2"></i>
+                </div>
+                <h3>$41,075</h3>
+                <span class="parsent"><i class="fa fa-caret-down"></i> 1.25%</span>
+                <div>
+                  <div class="low_high">
+                    <div class="low">
+                      <aside>Low: <span class="text-danger">$535</span></aside>
+                    </div>
+                    <div class="vertical_line mx-2"><input type="range" /></div>
+                    <div class="high">
+                      <aside>High:<span class="text-danger">$1000</span></aside>
+                    </div>
+                    <span class="twenty_four">24h</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="market_cap">
+              <h5>Market Cap</h5>
+              <span>$ 32.8 Billion</span>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="market_cap">
+              <h5>Volume </h5>
+              <span>$ 18.35 Million</span>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="market_cap">
+              <h5>52 week High</h5>
+              <span>$ 73.34</span>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="market_cap">
+              <h5>52 week Low</h5>
+              <span>$ 31.30</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+   
+        <div class="bitcoin_and_market_chap_wrapper">
+          <!-- <div class="bitcoin_and_market_chap_wrapper_flex_item market_cap">
+            <div class="flexable_item for_first_check">
+              <div class="bitcoin">
+                <img src="imgage/bitcoin.svg" alt="" />
+              </div>
+              <div class="bitcoin_info">
+                <div class="py-2">
+                  <h5>Bitcoin</h5>
+                  <span class="btc">BTC</span>
+                  <i class="fa fa-star d-inline m-2"></i>
+                </div>
+                <h3>$41,075</h3>
+                <span class="parsent"><i class="fa fa-caret-down"></i> 1.25%</span>
+                <div>
+                  <div class="low_high">
+                    <div class="low">
+                      <aside>Low: <span class="text-danger">$535</span></aside>
+                    </div>
+                    <div class="vertical_line mx-2"><input type="range" /></div>
+                    <div class="high">
+                      <aside>High:<span class="text-danger">$1000</span></aside>
+                    </div>
+                    <span class="twenty_four">24h</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="market_cap bitcoin_all">
+            <div class="flex_between_img_and_item">
+              <div class="bitcoin">
+                <img src="imgage/bitcoin.svg" alt="" />
+              </div>
+              <div class="bitcoin_info">
+                <div class="bit_heading">
+                  <h4>Bitcoin</h5>
+                  <span class="btc">BTC</span>
+                  <i class="fa fa-star d-inline m-2 yellow_star"></i>
+                </div>
+                <div class="bit_parsent_and_dollar">
+                  <h3>$41,075</h3>
+                  <span class="parsent"><i class="fa fa-caret-down carret_parsent"></i> 1.25%</span>
+                </div>
+                <div class="low_high">
+                  <div class="low">
+                    <aside> Low : <span class="text-danger"> $535</span></aside>
+                  </div>
+                 <input type="range" />
+                  <div class="high">
+                    <aside> High : <span class="text-danger"> $1000</span></aside>
+                  </div>
+                  <span class="twenty_four">24h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+            <div class="market_cap">
+              <h5>Market Cap</h5>
+              <span>$ 32.8 Billion</span>
+            </div>
+          
+
+     
+            <div class="market_cap">
+              <h5>Volume </h5>
+              <span>$ 18.35 Million</span>
+            </div>
+     
+
+
+            <div class="market_cap">
+              <h5>52 week High</h5>
+              <span>$ 73.34</span>
+            </div>
+     
+
+ 
+            <div class="market_cap">
+              <h5>52 week Low</h5>
+              <span>$ 31.30</span>
+            </div>
+     
+
+        </div>
+
+
+      <!-- candlestrick chart -->
+      <div class="candlestic_chart mb-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="candle_stick_chart_wrapper">
+              <div class="dimention">
+                <span>1D</span>
+                <span>5D</span>
+                <span>1M</span>
+                <span>2M</span>
+                <span>1Y</span>
+              </div>
+              <div class="under_dimention_size">
+                <p><span>O</span>4011.90</p>
+                <p><span>H</span>4011.90</p>
+                <p><span>L</span>4011.90</p>
+                <p><span>C</span>4011.90</p>
+              </div>
+              <div id="chart_div" style="width: 100%; height: 400px">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- candlestrick chart -->
+
+      <!-- donut chart -->
+      <div class="donut_chart">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="common_desc">
+              <h5 class="bitcoin_statement">Bitcoin's sentiment</h5>
+              <div>
+                <canvas id="doughnut"> </canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="common_desc">
+              <div class="donut_desc">
+                <h5>Description</h5>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non
+                  officia vitae saepe earum iste numquam aut? Quisquam tempora
+                  inventore ea, quis nemo similique velit, minima et totam
+                  expedita voluptatibus amet placeat delectus dolor aspernatur
+                  esse accusantium aliquid libero maxime ipsum necessitatibus?
+                  Expedita eum sed architecto consectetur facere fugit
+                  provident, enim vitae ab iste. Nam dolore vel nihil sed? Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+                  repellat necessitatibus veritatis! Vero laborum corrupti
+                  suscipit et, deserunt distinctio similique, ducimus dolorum
+                  voluptates enim adipisci! At numquam, molestiae expedita quae
+                  laborum vel a facilis illum, illo consectetur, debitis nobis
+                  animi!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="common_desc">
+              <div class="donut_desc">
+                <h5>Official Links</h5>
+                <li><a href="#">https://www.loremipsum.com</a></li>
+                <li><a href="#">https://www.loremipsum.com</a></li>
+                <li><a href="#">https://www.loremipsum.com</a></li>
+
+                <br /><br /><br /> <br>
+
+                <div class="social_media mt-2">
+                  <h5>Social Media</h5>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- donut chart -->
+
+      <!-- watermark area chart -->
+      <div class="area_chart">
+        <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <div class="select_option_day">
+              <div class="area_chart_wrapper area_chart_for_flex area_chart_wrapper_dark">
+                <div id="area_chart">
+                </div>
+              </div>
+              <select>
+                <option value="1 day">1 day</option>
+                <option value="1 day">1 day</option>
+                <option value="1 day">1 day</option>
+                <option value="1 day">1 day</option>
+                <option value="1 day">1 day</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-lg-8 col-md-12">
+            <div class="area_chart_wrapper">
+              <div class="row">
+                <div class="col-6">
+                  <div class="letest_news_chart">
+                    <h5>Latest News</h5>
+                    <h6>Lorem ipsum</h6>
+                    <span>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                      sed diam nonummy nibh euismod
+                    </span>
+                    <a href="#">Read more...</a>
+
+                    <h6>Lorem ipsum</h6>
+                    <span>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                      sed diam nonummy nibh euismod
+                    </span>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="letest_news_chart">
+                    <h5 style="padding-bottom:24px;"></h5>
+                    <h6>Lorem ipsum</h6>
+                    <span>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                      sed diam nonummy nibh euismod
+                    </span>
+                    <a href="#">Read more...</a>
+
+                    <h6>Lorem ipsum</h6>
+                    <span>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                      sed diam nonummy nibh euismod
+                    </span>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- watermark area chart -->
+
+      <!-- footer start -->
+      <div class="footer">
+        <div class="footer_wrapper">
+          <img src="imgage/footer_main_logo.png" alt="">
+          <div class="footer_social">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+          <span style="color: #999494;"> Copyright © 2022 BuzzRating | All Rights Reserved</span>
+          <span style="font-weight: 500; font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Payment
+            Method</span>
+          <img src="imgage/payment.png" alt="">
+        </div>
+      </div>
+      <!-- footer end -->
+
+
+
+
+      <!-- <div id="line_chart"></div> -->
+
+      <!-- table sentiment -->
+      <!-- <div class="sentiment_wrapper">
+        <div class="red_sentiment"></div>
+        <div class="gray_parsent">
+          <div class="gray_parsent_indicator">
+            15%
+          </div>
+        </div>
+        <div class="green_sentiment"></div>
+      </div> -->
+      <!-- table sentiment -->
+
+      <!-- heaader rectangle start  -->
+      <!-- <div class="rectangle_style">
+        <div class="rectangle_style_wrapper">
+          <div class="rectangle_img_wrapper">
+            <img src="imgage/group.png" alt="">
+            <img src="imgage/group.png" alt="">
+            <img src="imgage/group.png" alt="">
+            <img src="imgage/group.png" alt="">
+            <img src="imgage/group.png" alt="">
+            <img src="imgage/group.png" alt="">
+            <img src="imgage/group.png" alt="">
+          </div>
+        </div>
+        <div class="rectangle_select_item">
+          <select>
+            <option value="crypto">crypto</option>
+            <option value="crypto">crypto</option>
+            <option value="crypto">crypto</option>
+            <option value="crypto">crypto</option>
+          </select>
+          <select class="my-2">
+            <option value="50">50</option>
+            <option value="50">50</option>
+            <option value="50">50</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+
+        <div class="trending">
+          <h3>Trending <i class="fa fa-fire"></i></h3>
+        </div>
+        <div class="trending_wrapper">
+          <button>All Cryptos</button>
+          <button>Catgegory</button>
+        </div>
+      </div> -->
+      <!-- heaader rectangle end  -->
+
+      <!-- dashboard pagination -->
+      <!-- <div class="dashboard_pagination">
+        <p>1 - 50 | Total [9668] </p>
+        <nav>
+          <ul class="pagination_item">
+            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+            <li><a href="#" active>1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">...100</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+          </ul>
+        </nav>
+        <select class="my-2">
+          <option value="50">50</option>
+          <option value="50">50</option>
+          <option value="50">50</option>
+          <option value="50">50</option>
+        </select>
+      </div> -->
+      <!-- dashboard pagination -->
+
+      <!-- <div class="line_chart_pink">
+        <canvas id="line_chart_pink"> </canvas>
+      </div> -->
+
+
+    </div>
+
+    <!-- line chart for pink dashboard  -->
+    <!-- <script>
+      // barCHart Chart second chart
+      const dataForLine = {
+        labels: ["11:00", "12:00", '13:00', "14:00", "15:00", '16:00','17:00','18:00','19:00','20:00','21:00', ],
+
+
+        datasets: [{
+          label: '# of Votes',
+          data: [17.5, 18.5, 28.5, 25, 29, 30, ],
+          pointRadius: 0,
+          tension: 0.6,
+
+          backgroundColor: [
+            'none',
+            'transparent',
+            'transparent',
+            'transparent',
+            'transparent',
+            'transparent',
+            'transparent',
+            'transparent',
+
+
+
+
+          ],
+          borderColor: [
+            '#E80054',
+          ],
+
+
+
+        }]
+      };
+      // config
+
+      const barchartConfig = {
+        type: 'line',
+        data: dataForLine,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+              labels: {
+                pointStyle: 'circle',
+                usePointStyle: true,
+              }
+            }
+          },
+
+
+          scales: {
+
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: true,
+              },
+              title: {
+                display: true,
+                text: '# of mentions (hundreds)'
+              },
+            },
+            x: {
+              grid: {
+                // backgroundColor:'transparent',
+                display: false,
+
+
+              },
+              title: {
+                display: true,
+                text: 'Time (Universal)'
+              },
+            }
+
+
+
+          },
+
+        }
+
+      }
+
+
+
+
+      // data redering
+      const barChart = new Chart(document.getElementById('line_chart_pink'),
+        barchartConfig
+      );
+    </script> -->
+    <!-- line chart for pink dashboard  -->
+
+
+
+
+    <!-- candlestick chart  -->
+    <script type="text/javascript">
+      // candlestick chart
+
+      var chart = LightweightCharts.createChart(document.getElementById("chart_div"), {
+        // width: 600,
+        // height: 300,
+        layout: {
+          backgroundColor: '#FFFFFF',
+          textColor: 'black',
+        },
+        grid: {
+          vertLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+          },
+          horzLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+          },
+        },
+        crosshair: {
+          mode: LightweightCharts.CrosshairMode.Normal,
+        },
+        rightPriceScale: {
+          borderColor: 'rgba(197, 203, 206, 0.8)',
+        },
+        timeScale: {
+          borderColor: 'rgba(197, 203, 206, 0.8)',
+        },
+      });
+
+      var candleSeries = chart.addCandlestickSeries({
+        upColor: '#D83232',
+        downColor: '#419E6A',
+        borderDownColor: '#419E6A',
+        borderUpColor: '#D83232',
+        wickDownColor: 'rgba(255, 144, 0, 1)',
+        wickUpColor: 'rgba(255, 144, 0, 1)',
+      });
+
+      candleSeries.setData([{
+          time: '2018-10-19',
+          open: 180.34,
+          high: 180.99,
+          low: 178.57,
+          close: 179.85
+        },
+        {
+          time: '2018-10-22',
+          open: 180.82,
+          high: 181.40,
+          low: 177.56,
+          close: 178.75
+        },
+        {
+          time: '2018-10-23',
+          open: 175.77,
+          high: 179.49,
+          low: 175.44,
+          close: 178.53
+        },
+        {
+          time: '2018-10-24',
+          open: 178.58,
+          high: 182.37,
+          low: 176.31,
+          close: 176.97
+        },
+        {
+          time: '2018-10-25',
+          open: 177.52,
+          high: 180.50,
+          low: 176.83,
+          close: 179.07
+        },
+        {
+          time: '2018-10-26',
+          open: 176.88,
+          high: 177.34,
+          low: 170.91,
+          close: 172.23
+        },
+        {
+          time: '2018-10-29',
+          open: 173.74,
+          high: 175.99,
+          low: 170.95,
+          close: 173.20
+        },
+        {
+          time: '2018-10-30',
+          open: 173.16,
+          high: 176.43,
+          low: 172.64,
+          close: 176.24
+        },
+        {
+          time: '2018-10-31',
+          open: 177.98,
+          high: 178.85,
+          low: 175.59,
+          close: 175.88
+        },
+        {
+          time: '2018-11-01',
+          open: 176.84,
+          high: 180.86,
+          low: 175.90,
+          close: 180.46
+        },
+        {
+          time: '2018-11-02',
+          open: 182.47,
+          high: 183.01,
+          low: 177.39,
+          close: 179.93
+        },
+        {
+          time: '2018-11-05',
+          open: 181.02,
+          high: 182.41,
+          low: 179.30,
+          close: 182.19
+        },
+        {
+          time: '2018-11-06',
+          open: 181.93,
+          high: 182.65,
+          low: 180.05,
+          close: 182.01
+        },
+        {
+          time: '2018-11-07',
+          open: 183.79,
+          high: 187.68,
+          low: 182.06,
+          close: 187.23
+        },
+        {
+          time: '2018-11-08',
+          open: 187.13,
+          high: 188.69,
+          low: 185.72,
+          close: 188.00
+        },
+        {
+          time: '2018-11-09',
+          open: 188.32,
+          high: 188.48,
+          low: 184.96,
+          close: 185.99
+        },
+        {
+          time: '2018-11-12',
+          open: 185.23,
+          high: 186.95,
+          low: 179.02,
+          close: 179.43
+        },
+        {
+          time: '2018-11-13',
+          open: 177.30,
+          high: 181.62,
+          low: 172.85,
+          close: 179.00
+        },
+        {
+          time: '2018-11-14',
+          open: 182.61,
+          high: 182.90,
+          low: 179.15,
+          close: 179.90
+        },
+        {
+          time: '2018-11-15',
+          open: 179.01,
+          high: 179.67,
+          low: 173.61,
+          close: 177.36
+        },
+        {
+          time: '2018-11-16',
+          open: 173.99,
+          high: 177.60,
+          low: 173.51,
+          close: 177.02
+        },
+        {
+          time: '2018-11-19',
+          open: 176.71,
+          high: 178.88,
+          low: 172.30,
+          close: 173.59
+        },
+        {
+          time: '2018-11-20',
+          open: 169.25,
+          high: 172.00,
+          low: 167.00,
+          close: 169.05
+        },
+        {
+          time: '2018-11-21',
+          open: 170.00,
+          high: 170.93,
+          low: 169.15,
+          close: 169.30
+        },
+        {
+          time: '2018-11-23',
+          open: 169.39,
+          high: 170.33,
+          low: 168.47,
+          close: 168.85
+        },
+        {
+          time: '2018-11-26',
+          open: 170.20,
+          high: 172.39,
+          low: 168.87,
+          close: 169.82
+        },
+        {
+          time: '2018-11-27',
+          open: 169.11,
+          high: 173.38,
+          low: 168.82,
+          close: 173.22
+        },
+        {
+          time: '2018-11-28',
+          open: 172.91,
+          high: 177.65,
+          low: 170.62,
+          close: 177.43
+        },
+        {
+          time: '2018-11-29',
+          open: 176.80,
+          high: 177.27,
+          low: 174.92,
+          close: 175.66
+        },
+        {
+          time: '2018-11-30',
+          open: 175.75,
+          high: 180.37,
+          low: 175.11,
+          close: 180.32
+        },
+        {
+          time: '2018-12-03',
+          open: 183.29,
+          high: 183.50,
+          low: 179.35,
+          close: 181.74
+        },
+        {
+          time: '2018-12-04',
+          open: 181.06,
+          high: 182.23,
+          low: 174.55,
+          close: 175.30
+        },
+        {
+          time: '2018-12-06',
+          open: 173.50,
+          high: 176.04,
+          low: 170.46,
+          close: 175.96
+        },
+        {
+          time: '2018-12-07',
+          open: 175.35,
+          high: 178.36,
+          low: 172.24,
+          close: 172.79
+        },
+        {
+          time: '2018-12-10',
+          open: 173.39,
+          high: 173.99,
+          low: 167.73,
+          close: 171.69
+        },
+        {
+          time: '2018-12-11',
+          open: 174.30,
+          high: 175.60,
+          low: 171.24,
+          close: 172.21
+        },
+        {
+          time: '2018-12-12',
+          open: 173.75,
+          high: 176.87,
+          low: 172.81,
+          close: 174.21
+        },
+        {
+          time: '2018-12-13',
+          open: 174.31,
+          high: 174.91,
+          low: 172.07,
+          close: 173.87
+        },
+        {
+          time: '2018-12-14',
+          open: 172.98,
+          high: 175.14,
+          low: 171.95,
+          close: 172.29
+        },
+        {
+          time: '2018-12-17',
+          open: 171.51,
+          high: 171.99,
+          low: 166.93,
+          close: 167.97
+        },
+        {
+          time: '2018-12-18',
+          open: 168.90,
+          high: 171.95,
+          low: 168.50,
+          close: 170.04
+        },
+        {
+          time: '2018-12-19',
+          open: 170.92,
+          high: 174.95,
+          low: 166.77,
+          close: 167.56
+        },
+        {
+          time: '2018-12-20',
+          open: 166.28,
+          high: 167.31,
+          low: 162.23,
+          close: 164.16
+        },
+        {
+          time: '2018-12-21',
+          open: 162.81,
+          high: 167.96,
+          low: 160.17,
+          close: 160.48
+        },
+        {
+          time: '2018-12-24',
+          open: 160.16,
+          high: 161.40,
+          low: 158.09,
+          close: 158.14
+        },
+        {
+          time: '2018-12-26',
+          open: 159.46,
+          high: 168.28,
+          low: 159.44,
+          close: 168.28
+        },
+        {
+          time: '2018-12-27',
+          open: 166.44,
+          high: 170.46,
+          low: 163.36,
+          close: 170.32
+        },
+        {
+          time: '2018-12-28',
+          open: 171.22,
+          high: 173.12,
+          low: 168.60,
+          close: 170.22
+        },
+        {
+          time: '2018-12-31',
+          open: 171.47,
+          high: 173.24,
+          low: 170.65,
+          close: 171.82
+        },
+        {
+          time: '2019-01-02',
+          open: 169.71,
+          high: 173.18,
+          low: 169.05,
+          close: 172.41
+        },
+        {
+          time: '2019-01-03',
+          open: 171.84,
+          high: 171.84,
+          low: 168.21,
+          close: 168.61
+        },
+        {
+          time: '2019-01-04',
+          open: 170.18,
+          high: 174.74,
+          low: 169.52,
+          close: 173.62
+        },
+        {
+          time: '2019-01-07',
+          open: 173.83,
+          high: 178.18,
+          low: 173.83,
+          close: 177.04
+        },
+        {
+          time: '2019-01-08',
+          open: 178.57,
+          high: 179.59,
+          low: 175.61,
+          close: 177.89
+        },
+        {
+          time: '2019-01-09',
+          open: 177.87,
+          high: 181.27,
+          low: 177.10,
+          close: 179.73
+        },
+        {
+          time: '2019-01-10',
+          open: 178.03,
+          high: 179.24,
+          low: 176.34,
+          close: 179.06
+        },
+        {
+          time: '2019-01-11',
+          open: 177.93,
+          high: 180.26,
+          low: 177.12,
+          close: 179.41
+        },
+        {
+          time: '2019-01-14',
+          open: 177.59,
+          high: 179.23,
+          low: 176.90,
+          close: 178.81
+        },
+        {
+          time: '2019-01-15',
+          open: 176.08,
+          high: 177.82,
+          low: 175.20,
+          close: 176.47
+        },
+        {
+          time: '2019-01-16',
+          open: 177.09,
+          high: 177.93,
+          low: 175.86,
+          close: 177.04
+        },
+        {
+          time: '2019-01-17',
+          open: 174.01,
+          high: 175.46,
+          low: 172.00,
+          close: 174.87
+        },
+        {
+          time: '2019-01-18',
+          open: 176.98,
+          high: 180.04,
+          low: 176.18,
+          close: 179.58
+        },
+        {
+          time: '2019-01-22',
+          open: 177.49,
+          high: 178.60,
+          low: 175.36,
+          close: 177.11
+        },
+        {
+          time: '2019-01-23',
+          open: 176.59,
+          high: 178.06,
+          low: 174.53,
+          close: 176.89
+        },
+        {
+          time: '2019-01-24',
+          open: 177.00,
+          high: 177.53,
+          low: 175.30,
+          close: 177.29
+        },
+        {
+          time: '2019-01-25',
+          open: 179.78,
+          high: 180.87,
+          low: 178.61,
+          close: 180.40
+        },
+        {
+          time: '2019-01-28',
+          open: 178.97,
+          high: 179.99,
+          low: 177.41,
+          close: 179.83
+        },
+        {
+          time: '2019-01-29',
+          open: 178.96,
+          high: 180.15,
+          low: 178.09,
+          close: 179.69
+        },
+        {
+          time: '2019-01-30',
+          open: 180.47,
+          high: 184.20,
+          low: 179.78,
+          close: 182.18
+        },
+        {
+          time: '2019-01-31',
+          open: 181.50,
+          high: 184.67,
+          low: 181.06,
+          close: 183.53
+        },
+        {
+          time: '2019-02-01',
+          open: 184.03,
+          high: 185.15,
+          low: 182.83,
+          close: 184.37
+        },
+        {
+          time: '2019-02-04',
+          open: 184.30,
+          high: 186.43,
+          low: 183.84,
+          close: 186.43
+        },
+        {
+          time: '2019-02-05',
+          open: 186.89,
+          high: 186.99,
+          low: 184.69,
+          close: 186.39
+        },
+        {
+          time: '2019-02-06',
+          open: 186.69,
+          high: 186.69,
+          low: 184.06,
+          close: 184.72
+        },
+        {
+          time: '2019-02-07',
+          open: 183.74,
+          high: 184.92,
+          low: 182.45,
+          close: 184.07
+        },
+        {
+          time: '2019-02-08',
+          open: 183.05,
+          high: 184.58,
+          low: 182.72,
+          close: 184.54
+        },
+        {
+          time: '2019-02-11',
+          open: 185.00,
+          high: 185.42,
+          low: 182.75,
+          close: 182.92
+        },
+        {
+          time: '2019-02-12',
+          open: 183.84,
+          high: 186.40,
+          low: 183.52,
+          close: 185.52
+        },
+        {
+          time: '2019-02-13',
+          open: 186.30,
+          high: 188.68,
+          low: 185.92,
+          close: 188.41
+        },
+        {
+          time: '2019-02-14',
+          open: 187.50,
+          high: 188.93,
+          low: 186.00,
+          close: 187.71
+        },
+        {
+          time: '2019-02-15',
+          open: 189.87,
+          high: 192.62,
+          low: 189.05,
+          close: 192.39
+        },
+        {
+          time: '2019-02-19',
+          open: 191.71,
+          high: 193.19,
+          low: 191.28,
+          close: 192.33
+        },
+        {
+          time: '2019-02-20',
+          open: 192.39,
+          high: 192.40,
+          low: 191.11,
+          close: 191.85
+        },
+        {
+          time: '2019-02-21',
+          open: 191.85,
+          high: 192.37,
+          low: 190.61,
+          close: 191.82
+        },
+        {
+          time: '2019-02-22',
+          open: 191.69,
+          high: 192.54,
+          low: 191.62,
+          close: 192.39
+        },
+        {
+          time: '2019-02-25',
+          open: 192.75,
+          high: 193.42,
+          low: 189.96,
+          close: 189.98
+        },
+        {
+          time: '2019-02-26',
+          open: 185.59,
+          high: 188.47,
+          low: 182.80,
+          close: 188.30
+        },
+        {
+          time: '2019-02-27',
+          open: 187.90,
+          high: 188.50,
+          low: 183.21,
+          close: 183.67
+        },
+        {
+          time: '2019-02-28',
+          open: 183.60,
+          high: 185.19,
+          low: 183.11,
+          close: 185.14
+        },
+        {
+          time: '2019-03-01',
+          open: 185.82,
+          high: 186.56,
+          low: 182.86,
+          close: 185.17
+        },
+        {
+          time: '2019-03-04',
+          open: 186.20,
+          high: 186.24,
+          low: 182.10,
+          close: 183.81
+        },
+        {
+          time: '2019-03-05',
+          open: 184.24,
+          high: 185.12,
+          low: 183.25,
+          close: 184.00
+        },
+        {
+          time: '2019-03-06',
+          open: 184.53,
+          high: 184.97,
+          low: 183.84,
+          close: 184.45
+        },
+        {
+          time: '2019-03-07',
+          open: 184.39,
+          high: 184.62,
+          low: 181.58,
+          close: 182.51
+        },
+        {
+          time: '2019-03-08',
+          open: 181.49,
+          high: 181.91,
+          low: 179.52,
+          close: 181.23
+        },
+        {
+          time: '2019-03-11',
+          open: 182.00,
+          high: 183.20,
+          low: 181.20,
+          close: 182.44
+        },
+        {
+          time: '2019-03-12',
+          open: 183.43,
+          high: 184.27,
+          low: 182.33,
+          close: 184.00
+        },
+        {
+          time: '2019-03-13',
+          open: 183.24,
+          high: 183.78,
+          low: 181.08,
+          close: 181.14
+        },
+        {
+          time: '2019-03-14',
+          open: 181.28,
+          high: 181.74,
+          low: 180.50,
+          close: 181.61
+        },
+        {
+          time: '2019-03-15',
+          open: 182.30,
+          high: 182.49,
+          low: 179.57,
+          close: 182.23
+        },
+        {
+          time: '2019-03-18',
+          open: 182.53,
+          high: 183.48,
+          low: 182.33,
+          close: 183.42
+        },
+        {
+          time: '2019-03-19',
+          open: 184.19,
+          high: 185.82,
+          low: 183.48,
+          close: 184.13
+        },
+        {
+          time: '2019-03-20',
+          open: 184.30,
+          high: 187.12,
+          low: 183.43,
+          close: 186.10
+        },
+        {
+          time: '2019-03-21',
+          open: 185.50,
+          high: 190.00,
+          low: 185.50,
+          close: 189.97
+        },
+        {
+          time: '2019-03-22',
+          open: 189.31,
+          high: 192.05,
+          low: 188.67,
+          close: 188.75
+        },
+        {
+          time: '2019-03-25',
+          open: 188.75,
+          high: 191.71,
+          low: 188.51,
+          close: 189.68
+        },
+        {
+          time: '2019-03-26',
+          open: 190.69,
+          high: 192.19,
+          low: 188.74,
+          close: 189.34
+        },
+        {
+          time: '2019-03-27',
+          open: 189.65,
+          high: 191.61,
+          low: 188.39,
+          close: 189.25
+        },
+        {
+          time: '2019-03-28',
+          open: 189.91,
+          high: 191.40,
+          low: 189.16,
+          close: 190.06
+        },
+        {
+          time: '2019-03-29',
+          open: 190.85,
+          high: 192.04,
+          low: 190.14,
+          close: 191.89
+        },
+        {
+          time: '2019-04-01',
+          open: 192.99,
+          high: 195.90,
+          low: 192.85,
+          close: 195.64
+        },
+        {
+          time: '2019-04-02',
+          open: 195.50,
+          high: 195.50,
+          low: 194.01,
+          close: 194.31
+        },
+        {
+          time: '2019-04-03',
+          open: 194.98,
+          high: 198.78,
+          low: 194.11,
+          close: 198.61
+        },
+        {
+          time: '2019-04-04',
+          open: 199.00,
+          high: 200.49,
+          low: 198.02,
+          close: 200.45
+        },
+        {
+          time: '2019-04-05',
+          open: 200.86,
+          high: 203.13,
+          low: 200.61,
+          close: 202.06
+        },
+        {
+          time: '2019-04-08',
+          open: 201.37,
+          high: 203.79,
+          low: 201.24,
+          close: 203.55
+        },
+        {
+          time: '2019-04-09',
+          open: 202.26,
+          high: 202.71,
+          low: 200.46,
+          close: 200.90
+        },
+        {
+          time: '2019-04-10',
+          open: 201.26,
+          high: 201.60,
+          low: 198.02,
+          close: 199.43
+        },
+        {
+          time: '2019-04-11',
+          open: 199.90,
+          high: 201.50,
+          low: 199.03,
+          close: 201.48
+        },
+        {
+          time: '2019-04-12',
+          open: 202.13,
+          high: 204.26,
+          low: 202.13,
+          close: 203.85
+        },
+        {
+          time: '2019-04-15',
+          open: 204.16,
+          high: 205.14,
+          low: 203.40,
+          close: 204.86
+        },
+        {
+          time: '2019-04-16',
+          open: 205.25,
+          high: 205.99,
+          low: 204.29,
+          close: 204.47
+        },
+        {
+          time: '2019-04-17',
+          open: 205.34,
+          high: 206.84,
+          low: 205.32,
+          close: 206.55
+        },
+        {
+          time: '2019-04-18',
+          open: 206.02,
+          high: 207.78,
+          low: 205.10,
+          close: 205.66
+        },
+        {
+          time: '2019-04-22',
+          open: 204.11,
+          high: 206.25,
+          low: 204.00,
+          close: 204.78
+        },
+        {
+          time: '2019-04-23',
+          open: 205.14,
+          high: 207.33,
+          low: 203.43,
+          close: 206.05
+        },
+        {
+          time: '2019-04-24',
+          open: 206.16,
+          high: 208.29,
+          low: 205.54,
+          close: 206.72
+        },
+        {
+          time: '2019-04-25',
+          open: 206.01,
+          high: 207.72,
+          low: 205.06,
+          close: 206.50
+        },
+        {
+          time: '2019-04-26',
+          open: 205.88,
+          high: 206.14,
+          low: 203.34,
+          close: 203.61
+        },
+        {
+          time: '2019-04-29',
+          open: 203.31,
+          high: 203.80,
+          low: 200.34,
+          close: 202.16
+        },
+        {
+          time: '2019-04-30',
+          open: 201.55,
+          high: 203.75,
+          low: 200.79,
+          close: 203.70
+        },
+        {
+          time: '2019-05-01',
+          open: 203.20,
+          high: 203.52,
+          low: 198.66,
+          close: 198.80
+        },
+        {
+          time: '2019-05-02',
+          open: 199.30,
+          high: 201.06,
+          low: 198.80,
+          close: 201.01
+        },
+        {
+          time: '2019-05-03',
+          open: 202.00,
+          high: 202.31,
+          low: 200.32,
+          close: 200.56
+        },
+        {
+          time: '2019-05-06',
+          open: 198.74,
+          high: 199.93,
+          low: 198.31,
+          close: 199.63
+        },
+        {
+          time: '2019-05-07',
+          open: 196.75,
+          high: 197.65,
+          low: 192.96,
+          close: 194.77
+        },
+        {
+          time: '2019-05-08',
+          open: 194.49,
+          high: 196.61,
+          low: 193.68,
+          close: 195.17
+        },
+        {
+          time: '2019-05-09',
+          open: 193.31,
+          high: 195.08,
+          low: 191.59,
+          close: 194.58
+        },
+        {
+          time: '2019-05-10',
+          open: 193.21,
+          high: 195.49,
+          low: 190.01,
+          close: 194.58
+        },
+        {
+          time: '2019-05-13',
+          open: 191.00,
+          high: 191.66,
+          low: 189.14,
+          close: 190.34
+        },
+        {
+          time: '2019-05-14',
+          open: 190.50,
+          high: 192.76,
+          low: 190.01,
+          close: 191.62
+        },
+        {
+          time: '2019-05-15',
+          open: 190.81,
+          high: 192.81,
+          low: 190.27,
+          close: 191.76
+        },
+        {
+          time: '2019-05-16',
+          open: 192.47,
+          high: 194.96,
+          low: 192.20,
+          close: 192.38
+        },
+        {
+          time: '2019-05-17',
+          open: 190.86,
+          high: 194.50,
+          low: 190.75,
+          close: 192.58
+        },
+        {
+          time: '2019-05-20',
+          open: 191.13,
+          high: 192.86,
+          low: 190.61,
+          close: 190.95
+        },
+        {
+          time: '2019-05-21',
+          open: 187.13,
+          high: 192.52,
+          low: 186.34,
+          close: 191.45
+        },
+        {
+          time: '2019-05-22',
+          open: 190.49,
+          high: 192.22,
+          low: 188.05,
+          close: 188.91
+        },
+        {
+          time: '2019-05-23',
+          open: 188.45,
+          high: 192.54,
+          low: 186.27,
+          close: 192.00
+        },
+        {
+          time: '2019-05-24',
+          open: 192.54,
+          high: 193.86,
+          low: 190.41,
+          close: 193.59
+        },
+      ]);
+
+      // candlestick chart
+    </script>
+    <!-- candlestick chart  -->
+
+    <!-- donut chart start -->
+    <script>
+      const dataDoughnut = {
+        labels: ["Twitter 20%", "Reddit 5% ", 'Instagram 10%',
+          'Stocktwits 5%', 'Youtube 5%', 'Facebook  5%', 'Discord 5%', 'Teligram 5%', '4Chan 20%', 'News 20%'
+        ],
+
+        datasets: [{
+          label: '# of Votes',
+          data: [23, 6, 20, 40, 23, 6, 5, 5, 16, 20],
+
+          backgroundColor: [
+            'rgb(1,112,185)',
+            '#FF5700',
+            '#E4405F',
+            '#1C73E4',
+            '#CD201F',
+            '#1877F2',
+            '#7289DA',
+            '#0088CC',
+            '#0D9B1B',
+            '#FF6600',
+
+          ],
+          borderColor: [
+            'rgb(1,112,185)',
+            '#FF5700',
+            '#E4405F',
+            '#1C73E4',
+            '#CD201F',
+            '#1877F2',
+            '#7289DA',
+            '#0088CC',
+            '#0D9B1B',
+            '#FF6600',
+
+          ],
+
+          cutout: '60',
+
+        }]
+      };
+      // config
+      const doughnutConfig = {
+        type: 'doughnut',
+        data: dataDoughnut,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'left',
+              align: 'start',
+              fontSize: '14',
+              labels: {
+                pointStyle: 'circle',
+                usePointStyle: true
+              }
+            }
+          }
+        }
+
+      }
+
+
+
+
+      // data redering
+      const doughnut = new Chart(document.getElementById('doughnut'),
+        doughnutConfig
+      );
+    </script>
+    <!-- donut chart start -->
+
+<!-- for active class -->
+<script>
+  // Add active class to the current button (highlight it)
+  var header = document.getElementById("myDIV");
+  var btns = header.getElementsByClassName("nav_links");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+    });
+  }
+  </script>
+
+
+
+
+  </body>
+
+  </html>
